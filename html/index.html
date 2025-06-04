@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Welcome to Typing Game</title>
-  <style>
-    body {
+    <style>
+        body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #74ebd5, #9face6);
@@ -17,10 +17,12 @@
 
 .landing-container {
   text-align: center;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   padding: 50px;
   border-radius: 15px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
 }
 
 h1 {
@@ -35,28 +37,51 @@ p {
   color: #555;
 }
 
-.start-button {
-  display: inline-block;
-  padding: 12px 24px;
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.main-button,
+.secondary-button {
+  display: block;
+  padding: 12px;
   font-size: 1rem;
-  background-color: #4CAF50;
-  color: white;
   text-decoration: none;
   border-radius: 8px;
   transition: background-color 0.3s ease;
 }
 
-.start-button:hover {
+.main-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.main-button:hover {
   background-color: #45a049;
 }
 
-  </style>
+.secondary-button {
+  background-color: #2196F3;
+  color: white;
+}
+
+.secondary-button:hover {
+  background-color: #1976D2;
+}
+    </style>
 </head>
 <body>
   <div class="landing-container">
     <h1>Welcome to the Typing Challenge!</h1>
     <p>Improve your typing speed and accuracy. Are you ready to play?</p>
-    <a href="typing-game.html" class="start-button">Start Typing Game</a>
+    
+    <div class="button-group">
+      <a href="typing-game.html" class="main-button">Start Typing Game</a>
+      <a href="Register.html" class="secondary-button">Register</a>
+      <a href="abutUs.html" class="secondary-button">About Us</a>
+    </div>
   </div>
 </body>
 </html>
