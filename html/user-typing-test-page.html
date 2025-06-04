@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Typing Test</title>
+</head>
+<body>
+  <h2>Typing Test</h2>
+  <p id="quote">The quick brown fox jumps over the lazy dog.</p>
+
+  <form action="result.html" method="get" target="_blank" onsubmit="return handleSubmit()">
+    <textarea id="typedText" name="typedText" rows="6" cols="60" placeholder="Start typing..."></textarea><br>
+    <input type="hidden" name="startTime" id="startTime">
+    <input type="submit" value="Submit Typing">
+  </form>
+
+  <script>
+    let start = new Date();
+    document.getElementById("startTime").value = start.getTime();
+
+    function handleSubmit() {
+      // capture current time on submit
+      const end = new Date();
+      const startTime = document.getElementById("startTime").value;
+      const duration = (end.getTime() - startTime) / 1000;
+      const typedText = document.getElementById("typedText").value;
+      const url = result.html?text=${encodeURIComponent(typedText)}&time=${duration};
+      window.open(url, '_blank');
+      return false; // prevent default form submission
+    }
+  </script>
+</body>
+</html>
